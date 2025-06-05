@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app-container">
+        <div id="login-page">
+            <h1 class="text-3xl font-bold mb-8 text-gray-800">Student Portal Login</h1>
+            <div id="login-form">
+                <div class="mb-4">
+                    <label for="student-user-id" class="block text-gray-700 text-sm font-bold mb-2">User ID:</label>
+                    <input type="number" id="student-user-id" placeholder="Enter your User ID" class="shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div class="mb-6">
+                    <label for="student-password" class="block text-gray-700 text-sm font-bold mb-2">Password:</label>
+                    <input type="password" id="student-password" placeholder="Enter your password" class="shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <button id="student-login-button" class="submit-button w-full">Login</button>
+                <div id="login-message" class="alert-message hidden mt-4"></div>
+
+                <div class="login-links">
+                    <button id="new-registration-button">New Registration</button>
+                    <span>|</span>
+                    <button id="forgot-password-button">Forgot/Reset Password</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="app-content">
+            <div class="header">
+                <h1 class="text-2xl font-bold">Student Portal</h1>
+                <span id="students-badge" class="notification-badge hidden">0</span>
+            </div>
+
+            <div class="main-content">
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md mb-8">
+                    <h2 class="text-xl font-semibold mb-4 text-gray-700">Student Info</h2>
+                    <p id="selected-student-info" class="text-sm text-gray-600 mt-2">No student selected.</p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md mb-8">
+                    <h2 class="text-xl font-semibold mb-4 text-gray-700">Your Notifications</h2>
+                    <ul id="student-notifications-list" class="space-y-2">
+                        <li class="list-item text-gray-500">No new notifications.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md mb-8">
+                    <h2 class="text-xl font-semibold mb-4 text-gray-700">Your Homework</h2>
+                    <ul id="student-homework-list" class="space-y-2">
+                        <li class="list-item text-gray-500">No homework data.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md mb-8">
+                    <h2 class="text-xl font-semibold mb-4 text-gray-700">Your Exam Results</h2>
+                    <ul id="student-exam-results-list" class="space-y-2">
+                        <li class="list-item text-gray-500">No exam results available yet.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md mb-8">
+                    <h2 class="text-xl font-semibold mb-4 text-gray-700">Feedback, Suggestions, or Complaints</h2>
+                    <div class="mb-4">
+                        <label for="csr-type" class="block text-gray-700 text-sm font-bold mb-2">Type:</label>
+                        <select id="csr-type" class="shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                            <option value="Feedback">Feedback</option>
+                            <option value="Suggestion">Suggestion</option>
+                            <option value="Complaint">Complaint</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label for="csr-message" class="block text-gray-700 text-sm font-bold mb-2">Message:</label>
+                        <textarea id="csr-message" rows="4" placeholder="Enter your message here..." class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"></textarea>
+                    </div>
+                    <button id="submit-csr-button" class="submit-button w-full">Submit</button>
+
+                    <h3 class="text-lg font-semibold mt-6 mb-3 text-gray-700">Your Submissions</h3>
+                    <ul id="csr-submissions-list" class="space-y-2">
+                        <li class="text-gray-500">No submissions yet.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md">
+                    <h2 class="text-xl font-semibold mb-4 text-gray-700">Upcoming Events</h2>
+                    <ul id="student-events-list" class="space-y-2">
+                        <li class="list-item">Annual Sports Day - July 20, 2025</li>
+                        <li class="list-item">Summer Break Starts - July 25, 2025</li>
+                    </ul>
+                </div>
+            </div>
+            <button id="logout-button" class="logout-button">Logout</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
